@@ -1,0 +1,91 @@
+<DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Position Property in CSS</title>
+        <link rel="stylesheet" href="css-position-property.css">
+      </head>
+      <body>
+        <nav id="navbar">
+          <header>CSS Position Property</header>
+          <ul>
+            <li>
+              <a class="nav-link" href="#Overview">Overview</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#Static">Static</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#Relative">Relative</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#Absolute">Absolute</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#Fixed">Fixed</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#Sticky">Sticky</a>
+            </li>
+          </ul>
+        </nav>
+        <main id="main-doc">
+          <section id="Overview" class="main-section">
+            <header>Overview</header>
+            <p>CSS allows you to adjust the position of elements with the <span class="bold">position</span> property.</p>
+            <p>There are five possible values for position:</p>
+            <ul>
+              <li>Static</li>
+              <li>Relative</li>
+              <li>Absolute</li>
+              <li>Fixed</li>
+              <li>Sticky</li>
+            </ul>
+            <p>These values, in combination with the <span class="bold">top</span>, <span class="bold">left</span>, <span class="bold">right</span> and <span class="bold">bottom</span> properties will determine the final location of the element.</p>
+          </section>
+          <section id="Static" class="main-section">
+            <header>Static</header>
+            <p>If position is not assigned a value, this the default position is <code>static</code>.</p>
+            <p>An element with <code>static</code> positioning is not affected by the <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code> or <code>z-index</code> properties.</p>
+            <p>Instead, it follows the normal flow of the document.</p>
+          </section>
+          <section id="Relative" class="main-section">
+            <header>Relative</header>
+            <p>Similarly with static positioning, <code>relative</code> positioning follows the normal flow of a document.</p>
+            <p>However, unlike static positioning, an element with <code>relative</code> positioning will be offset according to <code>top</code>, <code>left</code>, <code>right</code>, and <code>bottom</code> values.</p>
+            <p>This offset will not affect other elements. In other words, the space the element takes up within the page layout is the same as the static, non-offset position.</p>
+            <p>Relative position is also affected by <code>z-index</code>; that is, whether the element is forward or behind other elements.
+          </section>
+          <section id="Absolute" class="main-section">
+            <header>Absolute</header>
+            <p>With <code>absolute</code> positioning, its designated space within the page layout is removed.</p>
+            <p>The element is instead anchored to its closest <span>positioned</span> ancestor or the initial containing block (the entire html page).</p>
+            <p>The final position is dictated by <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code> and <code>z-index</code> values.</p>
+            
+            <p>A common use case would be to anchor the <code>absolute</code> positioned element to a <code>relative</code> positioned element, like so:</p>
+            <pre>
+              .parent {
+                position: relative;
+              }
+    
+              .child {
+                position: absolute;
+              }
+            </code>
+          </section>      
+          <section id="Fixed" class="main-section">
+            <header>Fixed</header>
+            <p>A <code>fixed</code> element is removed from the document flow and positioned according to the entire html page.</p>
+            <p>It will also stay in the same position on the viewport screen, regardless of where the user scrolls on the page.</p>
+            <p>The final position is dictated by <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code> and <code>z-index</code> values.</p>
+          </section>
+          <section id="Sticky" class="main-section">
+            <header>Sticky</header>
+            <p>Elements with <code>sticky</code> positioning could best be described as an adaptable hybrid between relative and fixed positioning.</p>
+            <p>The element follows the normal flow of the document, except that it "sticks" to an ancestor which can scroll.</p>
+            <p>Sticky elements also change according to <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code> and <code>z-index</code> values.</p>
+          </section>
+        </main>
+      </body>
+    </html>
